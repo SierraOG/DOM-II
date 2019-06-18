@@ -88,9 +88,20 @@ window.addEventListener('resize', function(){
   alert("window was resized!");
 })
 
-// Nav to grey background 
-nav = document.querySelector('.main-navigation');
-nav.addEventListener('mouseover', function(event){
-  nav.style.background = 'grey';
+
+// Preventing propagation
+let childElement = document.querySelectorAll('.content-section.inverse-content p');
+childElement[0].addEventListener('click', function(event){
+  alert("You clicked on the p element");
   event.stopPropagation();
 });
+childElement[1].addEventListener('click', function(event){
+  alert("You clicked on the p element");
+  event.stopPropagation();
+});
+
+let parentContainer = document.querySelector('.content-section.inverse-content');
+parentContainer.addEventListener('click', function(){
+  alert("You clicked on the content section");
+});
+
