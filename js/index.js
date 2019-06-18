@@ -26,11 +26,11 @@ function zoom(event) {
     scale = Math.min(Math.max(.125, scale), 4);
   
     // Apply scale transform
-    letsGo.style.transform = `scale(${scale})`;
+    introimg.style.transform = `scale(${scale})`;
 }
   
-let letsGo = document.querySelector('.intro img');
-letsGo.addEventListener("wheel", zoom);
+let introimg = document.querySelector('.intro img');
+introimg.addEventListener("wheel", zoom);
 
 // Add pop up form
 const popForm = document.querySelector(".form-popup");
@@ -69,3 +69,15 @@ password.addEventListener('focus', (event) => {
 password.addEventListener('blur', (event) => {
   event.target.style.background = '';    
 });
+
+// Update when page is loaded 
+// document.addEventListener("DOMContentLoaded", () => {
+//   alert("DOM ready!");
+// });
+
+// double click lets go to make red
+let letsgo = document.querySelector('.text-content h2');
+letsgo.addEventListener('dblclick', function(){
+  letsgo.style.color = 'red';
+})
+
