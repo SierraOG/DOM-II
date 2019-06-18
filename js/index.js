@@ -53,7 +53,7 @@ closebtn.addEventListener('click', function(){
 
 // Alerts user when they submitted form
 function logSubmit(event) {
-  alert(`Form Submitted! Time stamp: ${event.timeStamp}`);
+  alert(`Form Submitted at: ${Date(event.timeStamp)}`);
   popForm.style.display = 'none';
 }
 
@@ -70,10 +70,6 @@ password.addEventListener('blur', (event) => {
   event.target.style.background = '';    
 });
 
-// Update when page is loaded 
-// document.addEventListener("DOMContentLoaded", () => {
-//   alert("DOM ready!");
-// });
 
 // double click lets go to make red
 let letsgo = document.querySelector('.text-content h2');
@@ -81,3 +77,20 @@ letsgo.addEventListener('dblclick', function(){
   letsgo.classList.toggle('red');
 })
 
+// Disable context menu on Welcome to fun bus
+let welcome = document.querySelector('.intro h2');
+welcome.addEventListener('contextmenu', e => {
+  e.preventDefault();
+});
+
+// Added alert for when window changes sizes
+window.addEventListener('resize', function(){
+  alert("window was resized!");
+})
+
+// Nav to grey background 
+nav = document.querySelector('.main-navigation');
+nav.addEventListener('mouseover', function(event){
+  nav.style.background = 'grey';
+  event.stopPropagation();
+});
