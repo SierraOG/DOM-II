@@ -301,6 +301,9 @@ img {
   width: 48%;
   padding-right: 1%;
 }
+.home .content-section .text-content .red {
+  color: red;
+}
 @media (max-width: 500px) {
   .home .content-section .text-content {
     width: 100%;

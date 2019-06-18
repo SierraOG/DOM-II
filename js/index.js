@@ -78,6 +78,6 @@ password.addEventListener('blur', (event) => {
 // double click lets go to make red
 let letsgo = document.querySelector('.text-content h2');
 letsgo.addEventListener('dblclick', function(){
-  letsgo.style.color = 'red';
+  letsgo.classList.toggle('red');
 })
 
